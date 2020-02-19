@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>添加商品</title>
+  <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/heightlength.css">
+  <link rel="stylesheet" href="../../css/mxjs.css">
+  <link rel="stylesheet" href="../css/commodityAdd.css">
+</head>
+
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12 " >
+      <div class="wen">商品管理>新增商品</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-11 col-md-offset-1" >
+      <div class="wen1">新增商品</div>
+    </div>
+  </div>
+  <form>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-2">
+        <table class="table table-hover  table-bordered text-center"id="biaoge">
+          <tr >
+            <td class="wen2" >商品ID:</td>
+            <td > <input type="text" value="" id="shangPingID"> </td>
+            <td class="wenzi">商品品牌：</td>
+            <td> <select  id="shangPingpai">
+                    <option value="纪梵希">纪梵希</option>
+                    <option  value="阿玛尼">阿玛尼</option>
+                    <option value="海蓝之谜">海蓝之谜</option>
+                    <option value="祖马龙">祖马龙</option>
+                    <option value="无" >无
+                    </option>
+                 </select>
+              <input type="text" value="" id="pingpaiShuru">
+
+            </td>
+            <!--<td><input type="text" value="" id="shangPingpai"></td>-->
+          </tr>
+          <tr>
+            <td class="wen3">商品名称：</td>
+            <td><input type="text" value="" id="shangMingcheng"> </td>
+            <td class="wen4">商品类别：</td>
+            <td> <select id="shangLeibie">
+              <option value="护肤品">护肤品</option>
+              <option value="口红">口红</option>
+              <option value="香水">香水</option>
+              <option value="彩妆">彩妆</option>
+              <option value="护脸">护脸</option>
+              <option value="套装">套装</option>
+              <option value="护肤">护肤</option>
+              <option value="沐浴露">沐浴露</option>
+              <option value="香氛">香氛</option>
+              <option value="无">无</option>
+                  </select>
+              <input type="text" value="" id="sangshuru">
+            </td>
+
+            <!--<td><input type="text" value="" id="shangLeibie"></td>-->
+          </tr>
+          <tr>
+            <td class="wenzi1">商品规格:</td>
+            <td><input type="text" value="" id="shangGuige"></td>
+            <td class="wenzi2">商品库存:</td>
+            <td><input type="text" value="" id="shangKuchun"></td>
+          </tr>
+          <tr>
+            <td class="wen5">商品描述：</td>
+            <td colspan="3"><textarea  placeholder="最多可打140字" maxlength="140"  class="duohang"  id="shangMiaosu"></textarea></td>
+          </tr>
+          <tr>
+            <td class="wen6">商品单价：</td>
+            <td> <input type="text" value="" id="shangDanjia"> </td>
+            <td class="wen7">商品成本：</td>
+            <td><input type="text" value="" id="shangChengben"></td>
+          </tr>
+          <tr>
+            <td class="wenzi4" colspan="1">优惠券:</td>
+            <td colspan="3"><input type="text" value="false" id="youHuijuan" > </td>
+          </tr>
+          <tr>
+            <td class="wen8">首页大图：</td>
+            <td> <input type="file" accept="image/gif, image/jpeg" id="souDatu">
+              <img src="" id="souDatuTTT">
+                  <!--<button type="button">上传图片</button>-->
+            </td>
+            <td class="wen9">正文图：</td>
+            <td>  <input type="file" accept="image/gif, image/jpeg" id="zhengDatu">
+                   <img src="" id="zhengdatuT">
+              <input type="file" accept="image/gif, image/jpeg" id="zhengDatu1">
+              <img src="" id="zhengdatuTT">
+              <input type="file" accept="image/gif, image/jpeg" id="zhengDatu2">
+              <img src="" id="zhengdatuTTT">
+            </td>
+
+          </tr>
+        </table>
+      </div>
+    </div>
+    <button id="tijiao" type="button"><a href="commodityList.html">提交</a></button>
+    <button id="congzhi" type="reset">重置</button>
+  </form>
+
+</div>
+
+
+<!--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>-->
+<script src="../../../js/bootstrap.js"></script>
+<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+<script src="../../../js/jquery.min.js"></script>
+<script src="../../js/smoothscroll.js"></script>
+<script src="../js/data.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!--<script src="../js/mking.js"></script>-->
+<script>
+    afterCombineData=sessionStorage.getItem("afterCombineData");
+    if(afterCombineData!=null){
+        splitData(afterCombineData);
+    }else {
+        createGoodsArray();
+    }
+    // $("#shangPingpai").val();
+    //
+    // setInterval(f,0);
+    //获取所有的val值
+  var image_url;
+  var zhi;
+    var pingpai
+    var leibie
+  $("#tijiao").click(function () {
+
+          // console.log($("#shangPingpai option:checked").text());
+      // console.log($("#pingpaiShuru").val());
+      // console.log($("#shangPingpai option:checked").val()!="无")
+      // console.log($("#shangPingpai option:checked").text()!="无")
+      if($("#shangPingpai option:checked").val()!="无"){
+
+          pingpai=$("#shangPingpai").val();
+      }else {
+          // console.log(11);
+          pingpai=$("#pingpaiShuru").val()
+      }
+
+
+      if($("#shangLeibie option:checked").text()!="无"){
+          leibie=$("#shangLeibie").val();
+
+      }else {
+
+          leibie=$("#sangshuru").val()
+      }
+
+          var shangP =
+              {
+                  goodsName: $("#shangMingcheng").val(),  //名称
+                  goodsID: $("#shangPingID").val(),        //ID
+                  goodsType: leibie,      //商品类别
+                  goodsBrand: pingpai,   //品牌
+                  goodsDescript: $("#shangMiaosu").val(), //商品描述
+                  goodsSpecifications: $("#shangGuige").val(),   //规格
+                  goodsPrimeCost: $("#shangChengben").val(), // 成本价
+                  goodsOriginalCost: $("#shangDanjia").val(),  // 销售原价
+                  goodsStock: $("#shangKuchun").val(),   //库存
+                  goodsPic: "<img src='../html/img/"+($("#souDatu").val().split(".")[0].slice(12))+".webp' width='75' height='75'>",
+                  goodsCoupon: $("#youHuijuan").val(), //是否存在优惠卷
+              }
+
+      goodsArray.splice(0,0,shangP);
+      console.log(goodsArray);
+      combineData();
+      sessionStorage.setItem("afterCombineData",afterCombineData);
+
+
+      // $("#shangPingID").blur(function () {
+  //     $("#shangPingID").val();
+  //     console.log( $("#shangPingID").val());
+  //     $.each(goods_data,function (i,n) {
+  //         //判断是否存在
+  //         if(goods_data[i].goodsID.indexOf($("#shangPingID").val())!=-1){
+  //             $("#shangMingcheng").val(goods_data[i].goodsName);
+  //             $("#shangLeibie").val(goods_data[i]. goodsType);
+  //             $("#shangMiaosu").text(goods_data[i].goodsDescript);
+  //             $("#shangDanjia").val(goods_data[i].goodsOriginalCost);
+  //             $("#shangChengben").val(goods_data[i].goodsPrimeCost)
+  //         }
+  //     })
+  // })
+
+
+  //获取上传图片的路径
+      })
+  $("#souDatu").change(function () {
+      console.log("change");
+      var file = this.files[0] ? this.files[0] : null;
+      if (!file) { return false; }
+      var file_reader = new FileReader();
+      file_reader.onload = (function(){
+          image_url = this.result;  // 这是图片的路径
+          $("#souDatuTTT").attr('src', image_url);  // 创建图片标签
+          // 插入到预览的区域内，这里需要你自己填写，因为我不知道你的网页结构
+          // 还有设置关闭按钮的事件 onclick
+          console.log(image_url);
+      });
+      file_reader.readAsDataURL(file);
+      // console.log(file);
+      // console.log("image_url"+image_url);
+  });
+    $("#zhengDatu").change(function () {
+        console.log("change");
+        var file = this.files[0] ? this.files[0] : null;
+        if (!file) { return false; }
+        var file_reader = new FileReader();
+        file_reader.onload = (function(){
+            image_url = this.result;  // 这是图片的路径
+            $("#zhengdatuT").attr('src', image_url);  // 创建图片标签
+            // 插入到预览的区域内，这里需要你自己填写，因为我不知道你的网页结构
+            // 还有设置关闭按钮的事件 onclick
+            console.log(image_url);
+        });
+        file_reader.readAsDataURL(file);
+        // console.log(file);
+        // console.log("image_url"+image_url);
+    });
+    $("#zhengDatu1").change(function () {
+        console.log("change");
+        var file = this.files[0] ? this.files[0] : null;
+        if (!file) { return false; }
+        var file_reader = new FileReader();
+        file_reader.onload = (function(){
+            image_url = this.result;  // 这是图片的路径
+            $("#zhengdatuTT").attr('src', image_url);  // 创建图片标签
+            // 插入到预览的区域内，这里需要你自己填写，因为我不知道你的网页结构
+            // 还有设置关闭按钮的事件 onclick
+            console.log(image_url);
+        });
+        file_reader.readAsDataURL(file);
+        // console.log(file);
+        // console.log("image_url"+image_url);
+    });
+    $("#zhengDatu2").change(function () {
+        console.log("change");
+        var file = this.files[0] ? this.files[0] : null;
+        if (!file) { return false; }
+        var file_reader = new FileReader();
+        file_reader.onload = (function(){
+            image_url = this.result;  // 这是图片的路径
+            $("#zhengdatuTTT").attr('src', image_url);  // 创建图片标签
+            // 插入到预览的区域内，这里需要你自己填写，因为我不知道你的网页结构
+            // 还有设置关闭按钮的事件 onclick
+            console.log(image_url);
+        });
+        file_reader.readAsDataURL(file);
+        // console.log(file);
+        // console.log("image_url"+image_url);
+    });
+
+
+  //重置所有val值
+    var inPut=[];
+    $("#congzhi").click(function () {
+      $("input").each(function (i,n) {
+          inPut.push($(this).val());
+      })
+        inPut=null;
+      $("img").each(function () {
+
+      })
+      function a() {
+          $("#souDatuTTT").attr('src', '');
+          $("#zhengdatuT").attr('src', '');
+          $("#zhengdatuTT").attr('src', '');
+          $("#zhengdatuTTT").attr('src', '');
+      }
+        a()
+
+    })
+
+
+  $("#shangPingpai").click(function () {
+     if($("#shangPingpai").val()=="无") {
+         $("#pingpaiShuru").css({
+             "display": "inline",
+         })
+
+
+     }else {
+         $("#pingpaiShuru").css({
+             "display": "none",
+         })
+         $("#shangPingpai").val();
+         // console.log($("#shangPingpai").val());
+     }
+
+  })
+    $("#shangLeibie").click(function () {
+        if($("#shangLeibie").val()=="无") {
+            $("#sangshuru").css({
+                "display": "inline",
+            })
+
+
+        }else {
+            $("#sangshuru").css({
+                "display": "none",
+            })
+            // console.log($("#shangPingpai").val());
+        }
+
+    })
+
+</script>
+</body>
+</html>

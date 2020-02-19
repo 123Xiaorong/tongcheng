@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>查询活动及优惠券</title>
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../link/css/heightlength.css">
+    <link rel="stylesheet" href="../../link/css/mxjs.css">
+    <script type="text/javascript" src="../../css/bootstrap.min.css"></script>
+    <link rel="stylesheet" href="css/SearchActiv&Coupon.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <table class="table table-bordered text-center" id="ActivTable">
+            <caption><h3>最近活动列表</h3></caption>
+            <thead>
+            <tr>
+                <td>活动ID</td>
+                <td>活动链接</td>
+                <td>活动名称</td>
+                <td>活动状态</td>
+                <td>开始时间</td>
+                <td>结束时间</td>
+                <td>创建时间</td>
+                <td>创建人</td>
+                <td>操作</td>
+            </tr>
+            </thead>
+            <tbody class="table table-bordered" id="activityTable">
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <table class="table table-bordered text-center">
+            <caption><h3>最近优惠券详情</h3></caption>
+            <thead>
+            <tr>
+                <td>优惠券ID</td>
+                <td>优惠券名称</td>
+                <td>优惠券类型</td>
+                <td>创建人</td>
+                <td>期限</td>
+                <td>操作</td>
+            </tr>
+            </thead>
+            <tbody class="table table-bordered" id="couponTable">
+
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <h3>活动查询列表</h3>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 text-right">活动名称：</div>
+        <div class="col-xs-2"><input type="text" id="activityName"></div>
+        <div class="col-xs-2 text-right">活动ID：</div>
+        <div class="col-xs-2"><input type="text" id="activityID"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 text-right">活动状态：</div>
+        <div class="col-xs-3">
+            <form action="">
+                <select name="" id="activityState">
+                    <option value="">--请选择--</option>
+                    <option value="">未开始</option>
+                    <option value="">进行中</option>
+                    <option value="">已结束</option>
+                </select>
+            </form>
+        </div>
+        <div class="col-xs-1 text-right">创建人：</div>
+        <div class="col-xs-2">
+            <input type="text" id="whoSet">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-xs-1">
+            <button type="button" class="btn btn-primary" id="SearchActiv">查询</button>
+        </div>
+        <div class="col-xs-1">
+            <button type="button" class="btn btn-default">取消</button>
+        </div>
+        <div class="col-xs-2">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+                新建活动</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row">
+            <table class="table table-bordered text-center">
+                <caption class="text-center"><h3>活动查询结果</h3></caption>
+                <thead>
+                <tr>
+                    <td>活动ID</td>
+                    <td>活动链接</td>
+                    <td>活动名称</td>
+                    <td>活动状态</td>
+                    <td>开始时间</td>
+                    <td>结束时间</td>
+                    <td>创建时间</td>
+                    <td>创建人</td>
+                    <td>操作</td>
+                </tr>
+                </thead>
+                <tbody id="activityResult">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <h3>优惠券查询列表</h3>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 text-right">优惠券名称：</div>
+        <div class="col-xs-2"><input type="text" id="couponName"></div>
+        <div class="col-xs-2 text-right">优惠券ID：</div>
+        <div class="col-xs-2"><input type="text" id="couponID"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2 text-right">创建人：</div>
+        <div class="col-xs-2"><input type="text" id="whoSetCoupon"></div>
+        <div class="col-xs-2 text-right">优惠类型：</div>
+        <div class="col-xs-2"><form action="" class="xuanZe">
+            <select id="couponType">
+                <option value="">--请选择--</option>
+                <option value="1">满减券</option>
+                <option value="2">立减券</option>
+                <option value="3">折扣券</option>
+            </select>
+        </form></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-5"></div>
+        <div class="col-xs-1">
+            <button type="button" class="btn btn-primary" id="SearchCoupon">提交</button>
+        </div>
+        <div class="col-xs-1">
+            <button type="button" class="btn btn-default">取消</button>
+        </div>
+        <div class="col-xs-2">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">新建优惠券</button>
+        </div>
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <caption class="text-center"><h3>优惠券查询结果</h3></caption>
+            <thead>
+            <tr class="text-center">
+                <td>优惠券ID</td>
+                <td>优惠券名称</td>
+                <td>优惠券类型</td>
+                <td>创建人</td>
+                <td>期限</td>
+                <td>操作</td>
+            </tr>
+            </thead>
+            <tbody id="couponResult">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<!--模态框1-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    修改活动信息
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-3">活动ID：</div>
+                    <div class="col-xs-5" id="ModalAID"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">活动链接：</div>
+                    <div class="col-xs-5"><input type="text" id="ModalAlink"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">活动名称：</div>
+                    <div class="col-xs-5"><input type="text" id="ModalAName"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">活动状态：</div>
+                    <div class="col-xs-5">
+                        <form>
+                            <select  id="ModalAState">
+                                <option value="">已结束</option>
+                                <option value="">进行中</option>
+                                <option value="">未开始</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">开始时间：</div>
+                    <div class="col-xs-5"><input type="date" id="ModalASTime"></div>
+
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">结束时间：</div>
+                    <div class="col-xs-5"><input type="date" id="ModalAEtime"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">创建人：</div>
+                    <div class="col-xs-5" id="ModalWhoSetA"></div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="submitEstablished">
+                    提交更改
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+
+<!--//模态框2-->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel1">
+                    修改优惠券信息
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-3">优惠券ID：</div>
+                    <div class="col-xs-5" id="ModalCouponID"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">优惠券名称：</div>
+                    <div class="col-xs-5"><input type="text" id="ModalCouponName"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">优惠券类型：</div>
+                    <div class="col-xs-5">
+                            <input type="text" >
+                        <form>
+                            <select id="ModalCouponType">
+                                <option value="">满减券</option>
+                                <option value="">立减券</option>
+                                <option value="">折扣</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">创建人：</div>
+                    <div class="col-xs-5" id="ModalWhoSetC"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">期限：</div>
+                    <div class="col-xs-5">
+                        <form>
+                            <select name="" id="ModalTime">
+                                <option value="">1天</option>
+                                <option value="">3天</option>
+                                <option value="">5天</option>
+                                <option value="">7天</option>
+                                <option value="">15天</option>
+                                <option value="">30天</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="submitEstablished1">
+                    提交
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<!--模态框3-->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel2">
+                    添加活动信息
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-3">活动ID：</div>
+                    <div class="col-xs-5" id="SetModalAID"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">活动链接：</div>
+                    <div class="col-xs-5"><input type="text" id="SetModalAlink"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">活动名称：</div>
+                    <div class="col-xs-5"><input type="text" id="SetModalAName"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">活动状态：</div>
+                    <div class="col-xs-5">
+                        <form>
+                            <select  id="SetModalAState">
+                                <option value="">已结束</option>
+                                <option value="">进行中</option>
+                                <option value="">未开始</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">开始时间：</div>
+                    <div class="col-xs-5"><input type="date" id="SetModalASTime"></div>
+
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">结束时间：</div>
+                    <div class="col-xs-5"><input type="date" id="SetModalAEtime"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">创建人：</div>
+                    <div class="col-xs-5" id="SetModalWhoSetA"></div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="SetsubmitEstablished">
+                    提交
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+
+<!--//模态框4-->
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel3">
+                    添加优惠券信息
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-3">优惠券ID：</div>
+                    <div class="col-xs-5" id="SetModalCouponID"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">优惠券名称：</div>
+                    <div class="col-xs-5"><input type="text" id="SetModalCouponName"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">优惠券类型：</div>
+                    <div class="col-xs-5">
+                        <form>
+                            <select id="SetModalCouponType">
+                                <option value="">满减券</option>
+                                <option value="">立减券</option>
+                                <option value="">折扣券</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">创建人：</div>
+                    <div class="col-xs-5" id="SetModalWhoSetC"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">期限：</div>
+                    <div class="col-xs-5">
+                        <form>
+                            <select name="" id="SetModalTime">
+                                <option value="">1天</option>
+                                <option value="">3天</option>
+                                <option value="">5天</option>
+                                <option value="">7天</option>
+                                <option value="">15天</option>
+                                <option value="">30天</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="SetsubmitEstablished1">
+                    提交
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script src="../js/smoothscroll.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.js"></script>
+<script src="js/Coupon_SearchActiv&Coupon.js">
+</script>
+</body>
+</html>

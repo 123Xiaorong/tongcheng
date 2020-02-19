@@ -1,0 +1,26 @@
+{
+	"list1": [
+		{
+			"name": "纪梵希",
+			"value": 180
+		}, {
+			"name": "LAMER",
+			"value": 380
+		}, {
+			"name": "阿玛尼",
+			"value": 130
+		}
+	],
+	"list2": [
+		{
+			"name": "纪梵希",
+			"value": 450
+		}, {
+			"name": "LAMER",
+			"value": 340
+		}, {
+			"name": "阿玛尼",
+			"value": 280
+		}
+	]
+}

@@ -1,0 +1,80 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.motaikuang{
+    width: 90%;
+    margin: 30px auto;
+    /*margin-left: 13%;*/
+
+}
+.wen{
+    color: white;
+    margin-top: 30px;
+    font-size: 16px;
+}
+.xian{
+    width: 100%;
+}
+.wen1{
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+}
+.beijintu{
+    background-color: #bce8f1;
+    width: 100%;
+    height: 180px;
+}
+.wenzi{
+    color: white;
+    font-size: 14px;
+}
+.wenzi1{
+    color: white;
+    font-size: 14px;
+}
+.wenzi2{
+    color: white;
+    font-size: 14px;
+}
+.beijintu1{
+    background-color: #bce8f1;
+    width: 100%;
+    height: 150px;
+    margin-top: 70px;
+}
+.wen2{
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+}
+#biaoge{
+    width: 80%;
+    /*border: 1px solid white;*/
+}
+.xiala{
+    width: 80%;
+    height: 25px;
+}
+.anniu{
+    background-color: #6f9425;
+    width: 60px;
+    height: 30px;
+    color: white;
+    border-radius: 10px;
+    border: 0px;
+}
+.xiala1{
+    width:200px;
+    height: 25px;
+}
+#yuanjia{
+    width: 50px;
+}
+#pintuanjia{
+    width: 50px;
+}
+.modal-body{
+    height: 400px;
+}

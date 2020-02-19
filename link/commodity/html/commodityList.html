@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>商品列表</title>
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/heightlength.css">
+    <link rel="stylesheet" href="../../css/mxjs.css">
+    <link rel="stylesheet" href="../css/commodityList.css"><!---->
+</head>
+<div id="commodityListContainer">
+    <p>
+        <a>商品管理</a> > <a>商品检索</a>
+    </p>
+    <div id="commoditySearchBox">
+        <div class="commoditySearchSon">
+            <label>商品编号:</label>
+            <input type="text" title="商品编号" placeholder="1000001" id="commodityId">
+        </div>
+        <div class="commoditySearchSon">
+            <label>商品名称 :</label>
+            <input type="text" title="商品名称" placeholder="阿玛尼黑钥匙至臻奂颜赋活精华液" id="commodityName">
+        </div>
+        <div class="commoditySearchSon">
+            <label>商品类别 :</label>
+            <!--<input type="text" title="商品类别" placeholder="护肤品" id="commodityType">-->
+            <select title="商品类别" id="selectType"></select>
+        </div>
+        <div class="commoditySearchSon">
+            <label>商品状态 :</label>
+            <!--<input type="text" title="商品状态" placeholder="上架中" id="commodityStatus">-->
+            <select title="商品状态" id="commodityStatus">
+                <option></option>
+                <option>上架</option>
+                <option>下架</option>
+            </select>
+        </div>
+        <button type="button" class="commoditySearchSon" id="commoditySearch">搜索</button>
+    </div>
+    <p>
+        <a>商品管理</a> > <a>商品列表</a>
+        <span id="controlButton">
+            <!--<input type="text" title="商品显示数目" placeholder="请输入商品显示数目">-->
+            <button type="button" onclick="controlButtonTurn(this)">批量操作</button>
+            <button type="button" ><a href="commodityAdd.html">新增商品</a></button>
+        </span>
+    </p>
+    <table>
+        <tbody>
+        <tr>
+            <th><input type="checkbox" title="全选" class="commodityChooseAll goodsCheck" onclick="commodityChooseAll(this)" disabled>全选</th>
+            <th>商品编号</th>
+            <th>商品名称</th>
+            <th class="th">商品图片</th>
+            <th class="th">商品类别</th>
+            <th class="th">商品品牌</th>
+            <th class="th">商品单价</th>
+            <th class="th">商品成本</th>
+            <th>商品库存</th>
+            <th class="th">访问数量</th>
+            <th>商品状态</th>
+            <th>操作选项</th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div id="commodityCover">
+    <div id="commodityCoverAddGoods">
+        <table>
+            <caption>商品补货</caption>
+            <tbody>
+            <tr>
+                <th>商品编号</th>
+                <th>商品名称</th>
+                <th>商品类别</th>
+                <th>商品品牌</th>
+                <th>补货数量</th>
+            </tr>
+            </tbody>
+        </table>
+        <span id="addGoodsButton">
+            <button type="button" onclick="commodityAddTrue()">确认补货</button>
+            <button type="button" onclick="commodityAddQuit()">退出补货</button>
+        </span>
+        <span id="addGoodsAll">
+            <input type="checkbox" title="统一补货" onclick="changeGoodsNumAll(this)"><input type="text" title="请输入补货数量">
+        </span>
+    </div>
+</div>
+<body>
+<script src="../../../js/bootstrap.js"></script>
+<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+<script src="../../js/smoothscroll.js"></script>
+<!--<script>hljs.initHighlightingOnLoad();</script>-->
+<!--<script src="../js/mking.js"></script>-->
+<script type="text/javascript" src="../js/jQuery3.4.1.js"></script>
+<script type="text/javascript" src="../js/data.js"></script>
+<script type="text/javascript" src="../js/commodityList.js"></script>
+<script type="text/javascript" src="../js/addCommodity.js"></script>
+</body>
+</html>

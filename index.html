@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="loading">
+    <div></div>
+    <div></div>
+    <span></span>
+</div>
+<div id="wrapper">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="brand">
+            <a href="index.html">
+                <span>同程优品管理系统</span>
+            </a>
+        </div>
+        <div class="container-fluid">
+            <div class="navbar-btn">
+                <button type="button" class="btn-toggle-fullwidth btn-toggle-mx">
+                    <img src="img/left.png" height="40px" >
+                </button>
+            </div>
+            <div>
+                <script type="text/javascript">
+                    WIDGET = {FID: 'Dt4or9q8fi'}
+                </script>
+                <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script>
+            </div>
+            <div id="CureTime">
+                <span></span>
+            </div>
+            <div class="addInfo">
+                    <div class="user" id="user">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span></span>
+                    </div>
+                    <div class="other">
+                        <span class="glyphicon glyphicon-triangle-bottom" id="myInfo"></span>
+                        <nav id="myInfoNav">
+                            <ul>
+                                <li>
+                                    <span class="glyphicon glyphicon-home"></span>
+                                    <a href="link/Center/myCenter.html" target="_blank" class="iframe_link">
+                                        个人中心
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="glyphicon glyphicon-log-out"></span>
+                                    <a href="login/login.html"> 退出登录</a>
+                                </li>
+                            </ul>
+                        </nav>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="sidebar-nav" class="sidebar">
+        <div class="sidebar-scroll">
+            <nav>
+                <ul class="nav">
+                    <li>
+                        <a href="javascript:;" class="nav-togg">
+                            <span>商品管理</span>
+                        </a>
+                        <div>
+                            <ul>
+                                <li>
+                                    <a href="link/commodity/html/commodityList.html" target="_blank" class="iframe_link active">
+                                        <span>商品列表</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="link/commodity/html/commodityAdd.html" target="_blank" class="iframe_link">
+                                        <span>添加商品</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="link/Order/Order.html" target="_blank" class="iframe_link">
+                            <span>订单管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="link/Coupon/Coupon_SearchActiv&Coupon.html" target="_blank" class="iframe_link">
+                            <span>优惠券/活动管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="link/user/userguanli.html" target="_blank" class="iframe_link">
+                            <span>用户管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="link/supplier/gongyinshang.html" target="_blank" class="iframe_link">
+                            <span>供应商管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="link/quanxian/quanxianguanli.html" target="_blank" class="iframe_link">
+                            <span>权限管理</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="link/Collage/Collage.html" target="_blank" class="iframe_link">
+                            <span>拼团</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="data/index.html" target="_blank" class="iframe_link">
+                            <span>数据统计</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main-content" style="height: 100%;">
+            <iframe src="link/commodity/html/commodityList.html" class="iframe_mx uicss-cn"></iframe>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.slimscroll.min.js"></script>
+<script src="js/klorofil-common.js"></script>
+<!--<script src="js/data.js"></script>-->
+<!--<script src="login/js/login.js"></script>-->
+<script src="js/nav.js"></script>
+</body>
+</html>

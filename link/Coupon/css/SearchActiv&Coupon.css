@@ -1,0 +1,8 @@
+.row{
+    margin: 10px 0;
+    padding: 3px;
+}
+a{
+    text-underline: none;
+    color: white;
+}

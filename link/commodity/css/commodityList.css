@@ -1,0 +1,264 @@
+*{
+    margin:0;
+    padding: 0;
+}
+body{
+    padding: 20px;
+    background-color: white;
+    position: relative;
+}
+a{
+    color: black;
+}
+a:hover{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#commodityListContainer{
+    width: 100%;
+    padding: 20px;
+    /*height: 100px;*/
+    overflow: hidden;
+    outline: 1px solid black;
+    /*position: relative;*/
+}
+#controlButton>button{
+    margin: 0 3px;
+    padding: 3px;
+    border: 0;
+    outline: 1px solid black;
+    background-color: transparent;
+}
+#commodityListContainer>p{
+    padding: 5px 2%;
+    font-size: 20px;
+    color: black;
+    border-bottom: 1px solid black;
+}
+#commodityListContainer>p:nth-of-type(2){
+    position: relative;
+}
+#controlButton{
+    font-size: 10px;
+    position: absolute;
+    right: 2%;
+    bottom: 7px;
+    padding: 0 3px;
+}
+
+/*-----商品检索-----*/
+#commoditySearchBox{
+    padding: 5px 2% 30px;
+    overflow: hidden;
+}
+.commoditySearchSon{
+    width: 22%;
+    /*padding: 3px;*/
+    float: left;
+    color: black;
+    border: 1px solid black;
+    margin-right: 3px;
+    overflow: hidden;
+}
+.commoditySearchSon>label{
+    padding: 5px;
+    margin: 0;
+    min-width: 80px;
+}
+.commoditySearchSon>input,.commoditySearchSon>select{
+    padding: 8px;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    width: 150px;
+}
+.commoditySearchSon>input:nth-of-type(1),.commoditySearchSon>input:nth-of-type(2){
+    padding: 9px 8px 8px;
+}
+#commoditySearchBox>button{
+    width:10%;
+    padding: 9px 8px 8px ;
+    background-color: transparent;
+    outline: none;
+}
+@media screen and (max-width:1227px)  {
+    #commoditySearchBox>button{
+        padding: 24px 5px 23px;
+    }
+    .commoditySearchSon>select{
+        width: 100%;
+    }
+}
+@media screen and (max-width:875px)  {
+    #commoditySearchBox>button{
+        width: 9%;
+    }
+}
+@media screen and (max-width:618px)  {
+    #commoditySearchBox>button{
+        width: 8%;
+        padding: 14px 5px 13px;
+    }
+}
+/*-----商品列表-----*/
+#commodityListContainer>table{
+    width: 100%;
+    color: black;
+}
+#commodityListContainer>table tr{
+    border: 1px solid black;
+}
+#commodityListContainer>table th{
+    width:8%;
+    text-align: center;
+    padding: 5px 0;
+    border: 1px solid black;
+}
+/*#commodityListContainer>table th:nth-of-type(2),#commodityListContainer>table th:nth-of-type(3){*/
+    /*width: 15%;*/
+/*}*/
+#commodityListContainer>table th:nth-of-type(1){
+    width: 5%;
+}
+input[type=checkbox]{
+    margin: 0 2px 2px 0;
+    vertical-align: middle;
+}
+#commodityListContainer>table th:nth-of-type(3){
+    width: 15%;
+}
+/*#commodityListContainer>table th:nth-of-type(12){*/
+    /*width: 10%;*/
+/*}*/
+#commodityListContainer>table td{
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px 0;
+}
+.operate>a>button{
+    border: 1px solid black;
+    outline: none;
+    background-color: transparent;
+    padding: 3% 5%;
+    margin: 1%;
+}
+/*-----页码-----*/
+#pageNo{
+    width: 100%;
+    padding: 1%;
+    text-align: center;
+    margin-top: 20px;
+    /*cursor: not-allowed;*/
+}
+#pageNo>span{
+    padding: 0.5% 1%;
+    margin: 0 0.3% 0;
+    border: 1px solid black;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+}
+.pageActive{
+    background-color: gray;
+    color: black!important;
+}
+/*------补货界面------*/
+#commodityCover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+#commodityCoverAddGoods {
+    width: 50%;
+    margin: 10% auto 0;
+    height: 450px;
+    background-color: white;
+    padding: 1% 2%;
+    min-width: 480px;
+    position: relative;
+}
+#commodityCoverAddGoods table{
+    width: 100%;
+}
+#commodityCoverAddGoods table caption{
+    /*text-align: center;*/
+    font-size: 25px;
+    padding-left: 1%;
+    color: black;
+    border-bottom: 1px solid black;
+}
+#commodityCoverAddGoods table th{
+    padding: 1% 0;
+    width: 11%;
+    text-align: center;
+}
+#commodityCoverAddGoods table th:nth-of-type(2){
+    width: 56%;
+}
+#commodityCoverAddGoods table td{
+    text-align: center;
+    height: 30px;
+    border: 1px solid black;
+}
+#commodityCoverAddGoods table td input{
+    border: 0;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    /*background-color: red;*/
+    padding: 10%;
+    text-align: center;
+}
+/*------补货页页码------*/
+#addListPageNo{
+    width: 100%;
+    padding: 1%;
+    text-align: center;
+    margin-top: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 55px;
+    /*background-color: red;*/
+}
+#addListPageNo>span{
+    padding: 0.5% 1%;
+    margin: 0 0.3% 0;
+    border: 1px solid black;
+    font-size: 10px;
+    color: black;
+    cursor: pointer;
+}
+.addListPageActive{
+    background-color: gray;
+    color: black!important;
+}
+#addGoodsButton{
+    width: 100%;
+    display: block;
+    text-align: center;
+    /*background-color: red;*/
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+}
+#addGoodsButton button{
+    border: 1px solid black;
+    outline: none;
+    background-color: transparent;
+    padding: 1% 4%;
+    margin: 0 1%;
+}
+#addGoodsAll{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    /*background-color: red;*/
+    padding: 1%;
+    /*border: 1px solid black;*/
+}
+

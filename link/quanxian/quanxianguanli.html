@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>功能名称</title>
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/heightlength.css">
+    <link rel="stylesheet" href="../css/mxjs.css">
+    <link rel="stylesheet" href="quanxiantest.css">
+    <style>
+        th{
+            width: 145px;
+        }
+        th:nth-child(1){
+            width: 250px;
+        }
+        th:nth-child(2){
+            width: 250px;
+        }
+        th:nth-child(3){
+            width: 265px;
+        }
+        th:nth-child(4){
+            width: 165px;
+        }
+        th:nth-child(6){
+            width: 130px;
+        }
+        tr{
+            height: 70px;
+            /*border: 1px solid red;*/
+        }
+        td{
+            width: 400px;
+        }
+        /*td:nth-child(2){*/
+            /*width: 400px;*/
+        /*}*/
+    </style>
+</head>
+
+<body onload="goPage(1,10)" style="background-color: white">
+
+<div class="container">
+    <div class="user-fragement" id="fragement">
+        <div class="col-lg-12 mxlength">
+            <div class="mx-1">
+                <h1 class="top-text">权限管理</h1>
+            </div>
+        </div>
+
+        <!--清除-->
+        <div style="clear: both">
+
+        </div>
+        <!--<div class="col-sm-12  ">-->
+            <div class="row search-fragement">
+                <!--<div class="col-sm-12">-->
+
+                <div class="col-sm-5 col-lg-4 col-xs-5">
+                        <div class="user-write" id="writesize"><span style="margin-left: 8px">输入你需要查询用户的账号：</span></div>
+                        </div>
+                        <div class="col-sm-2 col-lg-2 col-xs-1">
+                            <input type="text" class="user-search " id="usertextbox">
+                        </div>
+                        <div class="col-sm-5 col-lg-6 col-xs-6">
+                            <button type="button" class="write-button" id="usersumbit"style="background-color: #4bceff;border: none">查询</button>
+                        </div>
+            <!--</div>-->
+            </div>
+        </div>
+    </div>
+
+<!--第二部分 查询界面-->
+<div class="container">
+    <!--<div class="row">-->
+    <div class="col-sm-12">
+        <div style="width: 100%;height: 100px;border: none;border-bottom:1px solid black;overflow: hidden" id="chaxunjiemian">
+            <p style="margin-left: 70px;width: 1000px;"><span>用户ID</span><span style="margin-left: 60px">用户名字</span><span style="margin-left: 150px">权限管理</span><span style="margin-left: 220px">操作</span></p>
+
+            <span>
+</span>
+        </div>
+    </div>
+    <!--</div>-->
+</div>
+<!--第三部分总体部分-->
+<div class="container">
+    <div class="col-sm-12">
+        <div class="sum-fragement" id="sumserach" style="color: #000000;overflow: hidden">
+        </div>
+    </div>
+</div>
+
+<!--修改部分-->
+<div class="insertfragement" id="insertfragement">
+
+</div>
+
+
+
+<!--</div>-->
+<!--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>-->
+<!--<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>-->
+<!--<script src="../js/smoothscroll.js"></script>-->
+<!--<script>hljs.initHighlightingOnLoad();</script>-->
+<!--<script src="../js/mking.js"></script>-->
+<script src="../../js/jquery.min.js"></script>
+<script src="common.js"></script>
+<script src="data.js"></script>
+<script src="TEST.js"></script>
+<script>
+    // var huodezhi=$("#AreaId").val();//获取当前选择项的值.
+    // $("#AreaId").change(function () {
+    //     huodezhi=$("#AreaId").val();
+    //     console.log(huodezhi);
+    // })
+    // var options=$("#AreaId option:selected").value;//获取当前选择项.
+    // var huodezhi=options.text();//获取当前选择项的值.
+    var oTrchaxun;
+    var jiemian;
+    var oTd1;
+    var oName;
+    var oTd2;
+    var oTd3;
+    var olianxi;
+    var k=0;
+    // 隔开
+    var kkk=0;
+   $("#usersumbit").click(function(){
+       $("#iframeserach").attr("src", "iframe-serach.html");
+      // alert("数据为"+$("#usertextbox").val());
+      kkk=$("#usertextbox").val();
+       if(k==1) {
+           jiemian.removeChild(oTrchaxun);
+       }
+       k=0;
+      for(var i=0;i<sss.length;i++){
+          if(kkk==sss[i].cuID){
+              // 隔开
+              var oID=sss[i].cuID;
+              oName = sss[i].cuName;
+              olianxi = sss[i].cupower;
+              oTrchaxun = document.createElement('tr');
+              oTrchaxun.style.marginLeft="70px";
+              oTrchaxun.style.backgroundColor="whitesmoke";
+              oTd1 = document.createElement('td');
+              oTd1.style.width="132px";
+              oTd1.innerHTML=oID;
+              oTd1.style.color="black";
+              oTd2 = document.createElement('td');
+              oTd2.innerHTML = oName;
+              oTd2.style.width="220px";
+              oTd2.style.color="black";
+              oTd3 = document.createElement('td');
+              oTd3.innerHTML = olianxi;
+              oTd3.style.width="400px";
+              oTd3.style.color="black";
+
+              var oTd8 = document.createElement('td');
+              var insertlink = document.createElement('a');
+              var insertlink1=document.createElement("a");
+              oTd8.appendChild(insertlink1);
+              oTd8.appendChild(insertlink);
+              setInnerText(insertlink1,"修改");
+              setInnerText(insertlink, " 删除");
+              insertlink.href = 'javascript:void(0)';
+              insertlink.onclick = detele2;
+              insertlink1.onclick=insert1;
+
+              oTrchaxun.appendChild(oTd1);
+              oTrchaxun.appendChild(oTd2);
+              oTrchaxun.appendChild(oTd3);
+              oTrchaxun.appendChild(oTd8);
+              jiemian = document.getElementById('chaxunjiemian');
+              jiemian.appendChild(oTrchaxun);
+              oTrchaxun.style.position="absolute";
+              oTrchaxun.style.height="50px";
+              k=1;
+              break;
+              // 隔开
+          }
+         else if(i==sss.length-1&&sss[i].cuID!=kkk){
+              alert("不存在该账号");
+         }
+      }
+   })
+
+
+
+
+    // 终极隔开
+    //终极隔开
+var trsum1;
+    function insert1() {
+        var tr1 = this.parentNode.parentNode;
+        trsum1=this.parentNode.parentNode;
+        dangqianID=tr1.getElementsByTagName("td")[0].innerText;
+        dangqianName=tr1.getElementsByTagName("td")[1].innerText;
+        dangqianlianxi=tr1.getElementsByTagName("td")[2].innerText;
+        dangqianyouxiang=tr1.getElementsByTagName("td")[3].innerText;
+        dangqianmima=tr1.getElementsByTagName("td")[4].innerText;
+        dangqiandengji=tr1.getElementsByTagName("td")[5].innerText;
+        console.log(dangqianID);
+
+
+
+        ccc=document.createElement("div");
+        ccc.style.width="500px";
+        ccc.style.position="absolute";
+        ccc.style.height="500px";
+        ccc.style.top="20px";
+        ccc.style.left="500px";
+        ccc.style.backgroundColor="black";
+        ccc.style.opacity="0.8";
+        suppmax.appendChild(ccc);
+
+        // 第二个DIV
+        ccc1=document.createElement("p");
+        ccc1.innerText="用户信息修改";
+        ccc1.style.fontSize="30px";
+        ccc1.style.color="white";
+        ccc1.style.textAlign="center";
+        ccc.appendChild(ccc1);
+
+        // 实时数据DIV
+        cccdongtai=document.createElement("p");
+        cccdongtai.innerText="当前用户ID: "+" "+" "+dangqianID;
+        cccdongtai.style.fontSize="30px";
+        cccdongtai.style.color="white";
+        ccc.appendChild(cccdongtai);
+
+        // 第三个DIV
+        var ccc2=document.createElement("p");
+        ccc2.innerText="用户名字修改:";
+        ccc2.style.fontSize="30px";
+        ccc2.style.color="white";
+        ccc.appendChild(ccc2);
+
+        textbox1=document.createElement("input");
+        textbox1.type="text";
+        textbox1.style.fontSize="15px";
+        textbox1.value=dangqianName;
+        textbox1.style.position="absolute";
+        textbox1.style.top="110px";
+        textbox1.style.color="black";
+        textbox1.style.width="150px";
+        textbox1.style.height="30px";
+        textbox1.style.marginLeft="65px";
+        ccc2.appendChild(textbox1);
+
+        // 第四个DIV
+        var ccc3=document.createElement("p");
+        ccc3.innerText="用户联系方式修改:";
+        ccc3.style.fontSize="30px";
+        ccc3.style.color="white";
+        ccc.appendChild(ccc3);
+
+        textbox2=document.createElement("input");
+        textbox2.type="text";
+        textbox2.style.fontSize="15px";
+        textbox2.value=dangqianlianxi;
+        textbox2.style.position="absolute";
+        textbox2.style.left="250px";
+        textbox2.style.top="165px";
+        textbox2.style.color="black";
+        textbox2.style.width="150px";
+        textbox2.style.height="30px";
+        ccc3.appendChild(textbox2);
+
+        // 第五个DIV
+        var ccc4=document.createElement("p");
+        ccc4.innerText="用户邮箱地址修改:";
+        ccc4.style.fontSize="30px";
+        ccc4.style.color="white";
+        ccc.appendChild(ccc4);
+
+        textbox3=document.createElement("input");
+        textbox3.type="text";
+        textbox3.style.fontSize="15px";
+        textbox3.value=dangqianyouxiang;
+        textbox3.style.position="absolute";
+        textbox3.style.left="250px";
+        textbox3.style.top="210px";
+        textbox3.style.color="black";
+        textbox3.style.width="150px";
+        textbox3.style.height="30px";
+        ccc4.appendChild(textbox3);
+
+        // 第六个DIV
+        var ccc5=document.createElement("p");
+        ccc5.innerText="用户密码修改:";
+        ccc5.style.fontSize="30px";
+        ccc5.style.color="white";
+        ccc.appendChild(ccc5);
+
+        textbox4=document.createElement("input");
+        textbox4.type="text";
+        textbox4.style.fontSize="15px";
+        textbox4.value=dangqianmima;
+        textbox4.style.position="absolute";
+        textbox4.style.left="250px";
+        textbox4.style.top="265px";
+        textbox4.style.color="black";
+        textbox4.style.width="150px";
+        textbox4.style.height="30px";
+        ccc5.appendChild(textbox4);
+
+        // 第七个DIV
+        var ccc6=document.createElement("p");
+        ccc6.innerText="用户等级修改:";
+        ccc6.style.fontSize="30px";
+        ccc6.style.color="white";
+        ccc.appendChild(ccc6);
+
+
+
+        textbox5=document.createElement("select");
+        textbox5.setAttribute("id","AreaId");
+        textbox5.size=1;
+        textbox5.style.fontSize="20px";
+        var xuanzhekuang0=document.createElement("option");
+        xuanzhekuang0.innerText="游客登陆";
+        xuanzhekuang0.setAttribute("value","1");
+        var xuanzhekuang1=document.createElement("option");
+        xuanzhekuang1.innerText="普通会员";
+        xuanzhekuang1.setAttribute("value","2");
+        var xuanzhekuang2=document.createElement("option");
+        xuanzhekuang2.innerText="青铜会员";
+        xuanzhekuang2.setAttribute("value","3");
+        var xuanzhekuang3=document.createElement("option");
+        xuanzhekuang3.innerText="白银会员";
+        xuanzhekuang3.setAttribute("value","4");
+        var xuanzhekuang4=document.createElement("option");
+        xuanzhekuang4.innerText="铂金会员";
+        xuanzhekuang4.setAttribute("value","5");
+        var xuanzhekuang5=document.createElement("option");
+        xuanzhekuang5.innerText="钻石会员";
+        xuanzhekuang5.setAttribute("value","6");
+        var xuanzhekuang6=document.createElement("option");
+        xuanzhekuang6.innerText="星耀会员";
+        xuanzhekuang6.setAttribute("value","7");
+        var xuanzhekuang7=document.createElement("option");
+        xuanzhekuang7.innerText="至尊会员";
+        xuanzhekuang7.setAttribute("value","8");
+        textbox5.appendChild(xuanzhekuang0);
+        textbox5.appendChild(xuanzhekuang1);
+        textbox5.appendChild(xuanzhekuang2);
+        textbox5.appendChild(xuanzhekuang3);
+        textbox5.appendChild(xuanzhekuang4);
+        textbox5.appendChild(xuanzhekuang5);
+        textbox5.appendChild(xuanzhekuang6);
+        textbox5.appendChild(xuanzhekuang7);
+        // textbox5.type="text";
+        // for(var fff=0;fff<document.getElementById("AreaId").options.length;fff++)
+        // textbox5.style.fontSize="15px";
+        // textbox5.value=dangqiandengji;
+        textbox5.style.position="absolute";
+        textbox5.style.left="250px";
+        textbox5.style.top="320px";
+        textbox5.style.color="black";
+        // textbox5.style.width="150px";
+        // textbox5.style.height="30px";
+        ccc6.appendChild(textbox5);
+
+        var huoquxialachangdu=document.getElementById("AreaId");
+        var xialachangdu=huoquxialachangdu.options.length;
+        for(var fff=0;fff<xialachangdu;fff++){
+            if(huoquxialachangdu.options[fff].innerText==dangqiandengji){
+                var huoquvalue=huoquxialachangdu.options[fff].value;
+                console.log(huoquxialachangdu.options[fff].value);
+                textbox5.value=huoquvalue;
+                break;
+            }
+        }
+        // textbox5=document.createElement("input");
+        // textbox5.type="text";
+        // textbox5.style.fontSize="15px";
+        // textbox5.value=dangqiandengji;
+        // textbox5.style.position="absolute";
+        // textbox5.style.left="250px";
+        // textbox5.style.top="320px";
+        // textbox5.style.color="black";
+        // textbox5.style.width="150px";
+        // textbox5.style.height="30px";
+        // ccc5.appendChild(textbox5);
+
+        // 第八个DIV
+        var textbox6=document.createElement("input");
+        textbox6.type="button";
+        textbox6.value="提交";
+        textbox6.style.position="absolute";
+        textbox6.style.left="100px";
+        textbox6.style.top="400px";
+        textbox6.style.color="black";
+        textbox6.style.width="80px";
+        textbox6.style.height="30px";
+        ccc.appendChild(textbox6);
+
+        // 第九个DIV
+        var textbox7=document.createElement("input");
+        textbox7.type="button";
+        textbox7.value="返回";
+        textbox7.style.position="absolute";
+        textbox7.style.left="260px";
+        textbox7.style.top="400px";
+        textbox7.style.color="black";
+        textbox7.style.width="80px";
+        textbox7.style.height="30px";
+        ccc.appendChild(textbox7);
+
+// 返回
+        textbox7.onclick=fanhui;
+// 提交
+        textbox6.onclick=tijiao1;
+    }
+
+    // 终极隔开
+
+    function tijiao1() {
+        trsum1.getElementsByTagName("td")[0].innerText = dangqianID;
+        trsum1.getElementsByTagName("td")[1].innerText = textbox1.value;
+        trsum1.getElementsByTagName("td")[2].innerText = textbox2.value;
+        trsum1.getElementsByTagName("td")[3].innerText = textbox3.value;
+        trsum1.getElementsByTagName("td")[4].innerText = textbox4.value;
+        // trsum1.getElementsByTagName("td")[5].innerText = textbox5.value;
+        if(textbox5.value==1){
+            trsum1.getElementsByTagName("td")[5].innerText="游客登陆";
+        }
+        if(textbox5.value==2){
+            trsum1.getElementsByTagName("td")[5].innerText="普通会员";
+        }
+        if(textbox5.value==3){
+            trsum1.getElementsByTagName("td")[5].innerText="青铜会员";
+        }
+        if(textbox5.value==4){
+            trsum1.getElementsByTagName("td")[5].innerText="白银会员";
+        }
+        if(textbox5.value==5){
+            trsum1.getElementsByTagName("td")[5].innerText="黄金会员";
+        }
+        if(textbox5.value==6){
+            trsum1.getElementsByTagName("td")[5].innerText="铂金会员";
+        }
+        if(textbox5.value==7){
+            trsum1.getElementsByTagName("td")[5].innerText="星耀会员";
+        }
+        if(textbox5.value==8){
+            trsum1.getElementsByTagName("td")[5].innerText="至尊会员";
+        }
+
+        var linshiId=trsum1.getElementsByTagName("td")[0].innerText;
+        var linshiName=trsum1.getElementsByTagName("td")[1].innerText;
+        var linshilianxifangshi=trsum1.getElementsByTagName("td")[2].innerText;
+        var linshiaddress= trsum1.getElementsByTagName("td")[3].innerText;
+        var linshimima=trsum1.getElementsByTagName("td")[4].innerText;
+        var linshidengji=trsum1.getElementsByTagName("td")[5].innerText;
+
+        for(var i=0;i<sss.length;i++){
+            if(sss[i].cuID==linshiId){
+                if(sss[i].cuName!=linshiName){
+                    sss[i].cuName=linshiName;
+                }
+                if(sss[i].cuPhone!=linshilianxifangshi){
+                    sss[i].cuPhone=linshilianxifangshi;
+                }
+                if(sss[i].cuEmail!=linshiaddress){
+                    sss[i].cuEmail=linshiaddress;
+                }
+                if(sss[i].cuPassword!=linshimima){
+                    sss[i].cuPassword=linshimima;
+                }
+                if(sss[i].cuClass!=linshidengji){
+                    sss[i].cuClass=linshidengji;
+                }
+            }
+        }
+        var qqq=table.rows.length;
+        for(var k=0;k<qqq;k++){
+            if(table.rows[k].getElementsByTagName("td")[0].innerText==linshiId){
+                if(table.rows[k].getElementsByTagName("td")[1].innerText!=linshiName){
+                    table.rows[k].getElementsByTagName("td")[1].innerText=linshiName;
+                }
+                if(table.rows[k].getElementsByTagName("td")[2].innerText!=linshilianxifangshi){
+                    table.rows[k].getElementsByTagName("td")[2].innerText=linshilianxifangshi;
+                }
+                if(table.rows[k].getElementsByTagName("td")[3].innerText!=linshiaddress){
+                    table.rows[k].getElementsByTagName("td")[3].innerText=linshiaddress;
+                }
+                if(table.rows[k].getElementsByTagName("td")[4].innerText!=linshimima){
+                    table.rows[k].getElementsByTagName("td")[4].innerText=linshimima;
+                }
+                if(table.rows[k].getElementsByTagName("td")[5].innerText!=linshidengji){
+                    table.rows[k].getElementsByTagName("td")[5].innerText=linshidengji;
+                }
+            }
+        }
+            ccc.style.opacity = "0";
+            ccc.style.zIndex = -11;
+            // 隔开
+
+        }
+
+    // 隔开
+    // 隔开
+    var itable;
+    var num;
+    var tempStr;
+    var totalPage;
+    var currentPage;
+    var pageSize;
+    var startRow;
+    var endRow;
+    function goPage(pno,psize){
+        itable = document.getElementById("tablesum");
+        num = itable.rows.length;//表格所有行数(所有记录数)
+        totalPage = 0;//总页数
+        pageSize = psize;//每页显示行数
+        //总共分几页
+        if(num/pageSize > parseInt(num/pageSize)){
+            totalPage=parseInt(num/pageSize)+1;
+        }else{
+            totalPage=parseInt(num/pageSize);
+        }
+        currentPage = pno;//当前页数
+        startRow = (currentPage - 1) * pageSize+1;//开始显示的行  31
+        endRow = currentPage * pageSize;//结束显示的行   40
+        endRow = (endRow > num)? num : endRow;    40
+        console.log(endRow);
+        //遍历显示数据实现分页
+        for(var i=1;i<(num+1);i++){
+            var irow = itable.rows[i-1];
+            if(i>=startRow && i<=endRow){
+                irow.style.display = "block";
+            }else{
+                irow.style.display = "none";
+            }
+        }
+        tempStr = "共"+num+"条记录 分"+totalPage+"页 当前第"+currentPage+"页" ;
+        if(currentPage>1){
+            tempStr += "<a href=\"#\" onClick=\"goPage("+(1)+","+psize+")\">首页</a>";
+            tempStr += "<a href=\"#\" onClick=\"goPage("+(currentPage-1)+","+psize+")\"> <上一页</a>"
+        }else{
+            tempStr += " 首页";
+            tempStr += " <上一页";
+        }
+
+        if(currentPage<totalPage){
+            tempStr += "<a href=\"#\" onClick=\"goPage("+(currentPage+1)+","+psize+")\"> 下一页></a>";
+            tempStr += "<a href=\"#\" onClick=\"goPage("+(totalPage)+","+psize+")\"> 尾页</a>";
+        }else{
+            tempStr += " 下一页>";
+            tempStr += " 尾页";
+        }
+
+        document.getElementById("barcon").innerHTML = tempStr;
+
+
+
+        // 隔开
+    }
+
+</script>
+</body>
+</html>

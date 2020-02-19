@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>订单管理</title>
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/heightlength.css">
+    <link rel="stylesheet" href="../css/mxjs.css">
+    <link rel="stylesheet" href="css/Order.css">
+</head>
+<body class="mScroll">
+    <div class="headline">
+        <p class="text-left">订单管理</p>
+    </div>
+    <div class="data">
+        <div>
+            <p class="text-left tittle">订单数据</p>
+        </div>
+        <div class="table-responsive ta_bor">
+            <table class="table ta_fir">
+                <tr class="wte">
+                    <td>今日订单总额</td>
+                    <td></td>
+                    <td class="td_bor text-right">250,00元</td>
+                    <td>本周订单总额</td>
+                    <td></td>
+                    <td class="td_bor text-right">10,250,00元</td>
+                    <td>本周订单总额</td>
+                    <td></td>
+                    <td class="td_bor text-right">50,250,00元</td>
+                    <td>历史订单总额</td>
+                    <td></td>
+                    <td>1050,250,00元</td>
+                </tr>
+                <tr class="wte">
+                    <td>今日订单总额</td>
+                    <td></td>
+                    <td class="td_bor text-right">250,00元</td>
+                    <td>本周订单总额</td>
+                    <td></td>
+                    <td class="td_bor text-right">10,250,00元</td>
+                    <td>本周订单总额</td>
+                    <td></td>
+                    <td class="td_bor text-right">50,250,00元</td>
+                    <td>历史订单总额</td>
+                    <td></td>
+                    <td>1050,250,00元</td>
+                </tr>
+                <tr class="wte">
+                    <td>今日订单总额</td>
+                    <td></td>
+                    <td class="td_bor text-right">250,00元</td>
+                    <td>本周订单总额</td>
+                    <td></td>
+                    <td class="td_bor text-right">10,250,00元</td>
+                    <td>本周订单总额</td>
+                    <td></td>
+                    <td class="td_bor text-right">50,250,00元</td>
+                    <td>历史订单总额</td>
+                    <td></td>
+                    <td>1050,250,00元</td>
+                </tr>
+                <tr class="wte">
+                    <td>今日订单总额</td>
+                    <td></td>
+                    <td class="td_bor text-right">250,00元</td>
+                    <td>本周订单总额</td>
+                    <td></td>
+                    <td class="td_bor text-right">10,250,00元</td>
+                    <td>本周订单总额</td>
+                    <td></td>
+                    <td class="td_bor text-right">50,250,00元</td>
+                    <td>历史订单总额</td>
+                    <td></td>
+                    <td>1050,250,00元</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="filtrate">
+        <div class="headline">
+            <p class="text-left tittle">订单筛选</p>
+        </div>
+        <div class="container fil_box">
+            <div class="row fil_mar">
+                <div class="col-sm-5 col-xs-12">
+                    <div class="input-group">
+                        <span class="input-group-addon" >订单ID</span>
+                        <input type="text" class="form-control Text_ID" aria-label="..." >
+                    </div>
+                </div>
+                <div class="col-sm-5 col-xs-12 col-sm-offset-2">
+                    <div class="input-group">
+                        <span class="input-group-addon" >商品名称</span>
+                        <input type="text" class="form-control  Text_name" aria-label="...">
+                    </div>
+                </div>
+            </div>
+            <div class="row fil_mar">
+                <div class="col-sm-5 col-xs-12 ">
+                    <div class="input-group">
+                        <span class="input-group-addon" >寄送方式</span>
+                        <input type="text" class="form-control  Text_com" placeholder="顺丰，圆通，中通,-" aria-label="...">
+                    </div>
+                </div>
+                <div class="col-sm-5 col-xs-12 col-sm-offset-2 ">
+                    <div class="input-group">
+                        <span class="input-group-addon" >收货人姓名</span>
+                        <input type="text" class="form-control  Text_cusName" aria-label="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="find" onclick="FIND()">查询</button>
+    </div>
+    <div class="list">
+        <div class="headline ">
+            <p class="text-left tittle">订单列表</p>
+        </div>
+        <div class="container list_box">
+            <div class="row list_row">
+                <button class="col-sm-1 col-xs-1 list_choose fir" onclick="All()">全部</button>
+                <button class="col-sm-1 col-xs-1 list_choose" onclick="Pay()">待支付</button>
+                <button class="col-sm-1 col-xs-1 list_choose" onclick="Send()">待发货</button>
+                <button class="col-sm-1 col-xs-1 list_choose" onclick="HadSend()">已发货</button>
+                <button class="col-sm-1 col-xs-1 list_choose" onclick="Down()">已收货</button>
+                <button class="col-sm-1 col-xs-1 list_choose" onclick="DrawBack()">退款请求</button>
+                <button class="col-sm-1 col-xs-1 list_choose" onclick="ForDraw()">待退款</button>
+                <button class="col-sm-1 col-xs-1 list_choose" onclick="CanCel()">已取消</button>
+                <button class="col-sm-1 col-xs-1 list_choose" onclick="Compelet()">已完成</button>
+            </div>
+        </div>
+        <table id="List">
+            <tbody>
+                <tr class="list_wte">
+                <th>订单ID</th>
+                <th>商品名称</th>
+                <th>收货人姓名</th>
+                <th>收货人手机</th>
+                <th>寄送类型</th>
+                <th>支付时间</th>
+                <th>订单状态</th>
+                <th>操作</th>
+                </tr>
+            </tbody>
+        </table>
+        <div class="next_box">
+            <div class=" page_box1">每页显示5个订单，共8个</div>
+            <div class="page_box"><</div>
+            <button class="page page_box" onclick="page_1()">1</button>
+            <button class="page page_box" onclick="page_2()">2</button>
+            <div class="page_box">></div>
+        </div>
+    </div>
+    <div class="bg"></div>
+    <div class="send">
+        <div class="send_close">
+            <p>退款申请</p>
+            <button onclick="Close()">X</button>
+        </div>
+        <div class="send_box">
+            <h1>退款理由</h1>
+            <p>
+                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            </p>
+        </div>
+        <button class="send_sure" onclick="Sure()">确定</button>
+        <button class="send_cancel" onclick="Cancel()">取消</button>
+    </div>
+    <div class="more">
+        <table>
+            <tr>
+                <td>订单账号</td>
+                <td class="more_orderNo" colspan="2"></td>
+                <td>会员账号</td>
+                <td class="more_cusNo" colspan="2"></td>
+            </tr>
+            <tr>
+                <td>会员姓名</td>
+                <td class="more_cusNa"></td>
+                <td>会员手机号</td>
+                <td class="more_cusPh"></td>
+                <td>地址</td>
+                <td class="more_cusDr">四川省成都市高新区天府五街地铁站</td>
+            </tr>
+            <tr>
+                <td>订单状态</td>
+                <td class="more_ord"></td>
+                <td>价格</td>
+                <td class="more_pri"></td>
+                <td>物品名称</td>
+                <td  class="more_ordNa"></td>
+            </tr>
+            <tr>
+                <td>快递号</td>
+                <td class="more_CusNu"></td>
+                <td>快递公司</td>
+                <td class="more_Cus"></td>
+                <td>邮寄联系人</td>
+                <td class="more_CusNo"></td>
+            </tr>
+            <tr>
+                <td >创建时间</td>
+                <td>2018-04-01 18:19:30</td>
+                <td>发货时间</td>
+                <td class="more_SendTime"></td>
+                <td>支付时间</td>
+                <td class="more_PayTime"></td>
+            </tr>
+        </table>
+        <button onclick="more_Sure()" class="more_sure">确定</button>
+    </div>
+<!--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>-->
+    <script src="../../js/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+<script src="../js/smoothscroll.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="js/Order.js"></script>
+</body>
+</html>

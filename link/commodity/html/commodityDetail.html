@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>商品详情</title>
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/heightlength.css">
+    <link rel="stylesheet" href="../../css/mxjs.css">
+    <link rel="stylesheet" href="../css/commodityDetail.css">
+</head>
+
+<body>
+<div id="commodityDetailContainer">
+    <p>
+        <a>商品管理</a> > <a>商品详情</a>
+    </p>
+    <table>
+        <tbody>
+        <tr>
+            <th>商品基本信息</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>商品编号</td>
+            <td colspan="3" class="input">
+                <input type="text" title="商品编号" class="operate">
+            </td>
+        </tr>
+        <tr>
+            <td>商品名称</td>
+            <td colspan="3" class="input">
+                <input type="text" title="商品名称" class="operate">
+            </td>
+        </tr>
+        <tr>
+            <td>商品描述</td>
+            <td colspan="3" class="input">
+                <!--<input type="text" title="商品描述">-->
+                <textarea title="商品描述" class="operate"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>商品状态</td>
+            <td class="select">
+                <select title="商品状态" class="operate" id="commodityStatus">
+                    <option value="">上架</option>
+                    <option value="">下架</option>
+                </select>
+            </td>
+            <td>商品类别</td>
+            <td class="select">
+                <select title="商品类别" id="commodityType" class="operate">
+                    <!--<option value=""></option>-->
+                    <!--<option value=""></option>-->
+                    <!--<option value=""></option>-->
+                    <!--<option value=""></option>-->
+                </select>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+        <tr>
+            <th>商品价格信息</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>商品规格</td>
+            <td>商品原价</td>
+            <td>商品促销价</td>
+            <td>商品成本价</td>
+            <td>购买数量限制</td>
+            <td>商品库存</td>
+            <td>商品排名</td>
+            <td>供应商ID</td>
+        </tr>
+        <tr>
+            <td class="input"><input type="text" title="商品规格" class="operate"></td>
+            <td class="input"><input type="text" title="商品原价" class="operate"></td>
+            <td class="input"><input type="text" title="商品促销价" class="operate"></td>
+            <td class="input"><input type="text" title="商品成本价" class="operate"></td>
+            <td class="input"><input type="text" title="购买数量限制" class="operate"></td>
+            <td class="input"><input type="text" title="商品库存" class="operate"></td>
+            <td class="input"><input type="text" title="商品排名" class="operate"></td>
+            <td class="input"><input type="text" title="供应商ID" class="operate"></td>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+        <tr>
+            <th>商品浏览信息</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>截止时间</td>
+            <td>历史访问量</td>
+            <td>昨日访问量</td>
+            <td>上周访问量</td>
+            <td>上月访问量</td>
+            <td>昨日访问量排名</td>
+            <td>昨日排名变化</td>
+            <td>历史浏览转化比</td>
+        </tr>
+        <tr>
+            <td>2019-09-10 12:00</td>
+            <td>10000</td>
+            <td>300</td>
+            <td>1000</td>
+            <td>3000</td>
+            <td>5</td>
+            <td>下降2名</td>
+            <td>20%</td>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <tbody>
+        <tr>
+            <th>商品销售情况</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>历史创单总量</td>
+            <td>历史销售量</td>
+            <td>昨日销售量</td>
+            <td>上周销售量</td>
+            <td>上月销售量</td>
+            <td>昨日商品排名</td>
+            <td>昨日排名变化</td>
+            <td>历史退货数量</td>
+        </tr>
+        <tr>
+            <td>100000</td>
+            <td>120000</td>
+            <td>200</td>
+            <td>1000</td>
+            <td>1200</td>
+            <td>3</td>
+            <td>上升2名</td>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>历史创单总价格（元）</td>
+            <td>历史总流水（元）</td>
+            <td>昨日流水（元）</td>
+            <td>上周流水（元）</td>
+            <td>上月流水（元）</td>
+            <td>昨日商品排名</td>
+            <td>上周商品排名变化</td>
+            <td>退款总额（元）</td>
+        </tr>
+        <tr>
+            <td>10000</td>
+            <td>9000</td>
+            <td>500</td>
+            <td>1000</td>
+            <td>2000</td>
+            <td>2</td>
+            <td>上升1名</td>
+            <td>3000</td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="commodityList.html"><button class="operate" id="saveChange" onclick="changeDataSave()">保存修改</button></a>
+    <a href="commodityList.html"><button id="operateBack">返回列表</button></a>
+    <a><button class="operate" id="backChange">还原修改</button></a>
+</div>
+<script src="../../../js/bootstrap.js"></script>
+<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+<script src="../../js/smoothscroll.js"></script>
+<!--<script>hljs.initHighlightingOnLoad();</script>-->
+<!--<script src="../js/mking.js"></script>-->
+<script type="text/javascript" src="../js/jQuery3.4.1.js"></script>
+<script type="text/javascript" src="../js/data.js"></script>
+<script type="text/javascript" src="../js/commodityDetail.js"></script>
+</body>
+</html>

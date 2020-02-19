@@ -1,0 +1,134 @@
+button{
+    outline: none;
+}
+body{
+    background-color: white;
+}
+h3{
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: black;
+}
+table{
+    /*outline: orange 1px solid;*/
+    font-size: 20px;
+    text-align: center;
+}
+table tr{
+    line-height: 40px;
+}
+/*偶数行*/
+table tr:nth-child(even){
+    background: rgba(0,0,0,0.4);
+    color: white;
+}
+/*奇数行*/
+table tr:nth-child(odd){
+    background: white;
+    color: black;
+}
+table tr td:nth-child(1){
+    width: 150px;
+    /*outline: 1px solid red;*/
+}
+table tr td:nth-child(2){
+    width: 280px;
+}
+#myCenter{
+    /*margin: 0 auto;*/
+}
+#myBtn,#myInfoBtn{
+    padding: 8px 0px;
+}
+#myBtn{
+    background-color: white;
+}
+input[type="button"]{
+    background-color: #01A5A7;
+    border: 0px;
+    color: white;
+    border-radius: 25px;
+    width: 140px;
+}
+input[type="button"]:nth-child(1){
+    margin-right: 10px;
+}
+#myInfo{
+    display: none;
+    /*margin: 0 auto;*/
+}
+
+#myInfo>table{
+    margin-top: 30px;
+}
+#myInfo tr{
+    background-color: white;
+    color: black;
+}
+input[type="text"]{
+    width: 280px;
+    text-align: center;
+}
+#myPassword{
+    display: none;
+
+}
+#myPassword table{
+    margin-top: 30px;
+}
+#myPassword tr{
+    background-color: white;
+    color: black;
+    font-family: normal;
+    /*outline: #3d5880 1px solid;*/
+}
+#myPassword input[type="button"]{
+    margin: 10px 0;
+    /*width: 280px;*/
+    border: 0px;
+}
+
+/*密码强度*/
+ul.pass_set {
+    clear: both;
+    margin-top: 7px;
+    height: 18px;
+    line-height: 18px;
+    overflow: hidden;
+    width: 200px;
+    margin-left: 180px;
+    overflow: hidden;
+    /*outline: #ea4c89 1px solid;*/
+}
+
+ul.pass_set li {
+    float: left;
+    text-align: center;
+    width: 50px;
+    border-right: 2px solid #fff;
+    background: #ffd8b4;
+    color: #fff;
+    list-style-type: none;
+}
+
+
+dl.code_note dt {
+    clear: both;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.7em;
+}
+
+dl.code_note dt p {
+    clear: both;
+    font-weight: normal;
+    padding-top: 5px;
+}
+
+dl.code_note dd {
+    clear: both;
+    padding-top: 15px;
+}
+#myInfo input[type="text"]{
+    height: 30px;
+}

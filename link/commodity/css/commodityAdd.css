@@ -1,0 +1,144 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: white;
+}
+.wen{
+    /*border: 1px solid black;*/
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    margin-top: 30px;
+    /*color: whitesmoke;*/
+    padding-left: 7%;
+}
+.wen1{
+    border: 1px solid black;
+    background-color: gainsboro;
+    color:white ;
+    width: 84.5%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    margin-top: 60px;
+    text-align: center;
+    margin-left: -2.5%;
+}
+#biaoge{
+    margin-left: -140px;
+    width: 93%;
+}
+.wen2{
+    font-size: 20px;
+}
+.wen2+td>input{
+    /*width: 70%;*/
+    height: 30px;
+}
+.wen3{
+    font-size: 20px;
+}
+.wen3+td>input{
+    height: 30px;
+}
+.wen4{
+    font-size: 20px;
+}
+.wen4+td>input{
+    height: 30px;
+}
+.wen5{
+    font-size: 20px;
+}
+.duohang{
+    width: 90%;
+    height: 140px;
+}
+.wen6{
+    font-size: 20px;
+}
+.wen6+td>input{
+    height: 30px;
+}
+.wen7{
+    font-size: 20px;
+}
+.wen7+td>input{
+    height: 30px;
+}
+.wen8{
+    font-size: 20px;
+}
+.wen9{
+    font-size: 20px;
+}
+#tijiao{
+    background-color: #bce8f1;
+    width: 70px;
+    height: 40px;
+    color: white;
+    margin-left: 40%;
+}
+#congzhi{
+    background-color: #bce8f1;
+    width: 70px;
+    height: 40px;
+    color: white;
+}
+.wenzi{
+    font-size: 20px;
+}
+#shangPingpai{
+    height: 30px;
+    width: 80px;
+}
+.wenzi1{
+    font-size: 20px;
+}
+.wenzi1+td>input{
+    height: 30px;
+}
+.wenzi2{
+    font-size: 20px;
+}
+.wenzi2+td>input{
+    height: 30px;
+}
+
+
+.wenzi4{
+    font-size: 20px;
+}
+.wenzi4+td>input{
+    height: 30px;
+}
+#souDatu{
+    /*display: none;*/
+}
+#souDatuTTT{
+    width: 75px;
+    height: 75px;
+    /*display: none;*/
+}
+#pingpaiShuru{
+    display: none;
+
+}
+#zhengdatuT{
+    width: 75px;
+    height: 75px;
+}
+#zhengdatuTT{
+    width: 75px;
+    height: 75px;
+}
+#zhengdatuTTT{
+    width: 75px;
+    height: 75px;
+}
+#sangshuru{
+    display: none;
+}

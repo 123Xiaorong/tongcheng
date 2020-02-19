@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>创建拼团活动</title>
+	<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/heightlength.css">
+	<link rel="stylesheet" href="../css/mxjs.css">
+	<link rel="stylesheet" href="assets/css/2.css">
+   
+	<!-- basic styles -->
+	
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+	
+	<link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/font-awesome/3.2.1/css/font-awesome.min.css">
+	
+	<!-- page specific plugin styles -->
+	
+	<link rel="stylesheet" href="assets/css/jquery-ui-1.10.3.full.min.css" />
+	
+	<link rel="stylesheet" href="assets/css/datepicker.css" />
+	
+	<link rel="stylesheet" href="assets/css/ui.jqgrid.css" />
+	
+	<!-- fonts -->
+	
+	<!-- ace styles -->
+	
+	<link rel="stylesheet" href="assets/css/ace.min.css" />
+	
+	<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+	
+	<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+	
+	<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../css/heightlength.css">
+	<link rel="stylesheet" href="../css/mxjs.css">
+	
+	<!-- inline styles related to this page -->
+	
+	<!-- ace settings handler -->
+	
+	<script src="assets/js/ace-extra.min.js"></script>
+	
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	
+	<style>
+		/* .ui-jqgrid-view>.ui-jqgrid-titlebar{height:0px;line-height:0px;color:#FFF;background:#FFFFFF;padding:0;font-size:0px} */
+	</style>
+	
+</head>
+
+<body>
+	
+    <div class="main-container">
+			
+			<div class="main-container-inner">
+				
+				<div class="main-content" style="margin-left: 0px">
+
+					<div class="page-content">
+
+						<div class="page-header">
+
+							<h1>
+
+								拼团管理
+
+								<small>
+
+									<i class="icon-double-angle-right"></i>
+
+									拼团管理列表
+
+								</small>
+
+							</h1>
+
+						</div><!-- /.page-header -->
+
+						<div class="row">
+
+							<div class="col-xs-12">
+
+								<!-- PAGE CONTENT BEGINS -->
+
+								<div class="alert alert-info">
+
+									<i class="icon-hand-right"></i>
+
+									<!-- Button trigger modal -->
+									<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+										创建拼团活动
+									</button>
+
+									<!-- Modal -->
+									<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+										<div  class="motaikuang" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+													<h4 class="modal-title" id="myModalLabel">新增拼团</h4>
+												</div>
+												<div class="modal-body">
+													<div class="container-fluid">
+														<div class="beijintu">
+															<div class="row">
+																<div class="col-md-10 col-md-offset-2">
+																	<div class="wen">拼团管理>新增拼团活动</div>
+																</div>
+															</div>
+															<hr class="xian">
+															<div class="row">
+																<div class="col-md-9 col-md-offset-3">
+																	<div class="wen1">拼团基本信息</div>
+																</div>
+															</div>
+															<form>
+																<div class="row">
+																	<div class="col-md-9 ">
+																		<span class="wenzi">拼团活动时间：</span>
+																		<input type="datetime-local" name="" value="" id="shijian">
+																		<span class="wenzi1">ID</span>
+																		<input type="text"name="" value="" id="shijian1">
+																	</div>
+																	<div class="col-md-3  ">
+																		<span class="wenzi2">成团有效时间</span>
+																		<select id="shijian2">
+																			<option value="12小时">12小时</option>
+																			<option value="24小时">24小时</option>
+																			<option value="36小时">36小时</option>
+																			<option value="48小时">48小时</option>
+																		</select>
+																		<!--<input type="datetime-local"name="" value="" id="shijian2">-->
+																	</div>
+																</div>
+															</form>
+															<div class="beijintu1">
+																<div class="row">
+																	<div class="col-md-9 col-md-offset-3">
+																		<div class="wen2">关联商品</div>
+																	</div>
+																</div>
+																<form>
+																	<div class="row">
+																		<div class="col-md-10 col-md-offset-2">
+																			<table class="table table-hover  table-bordered text-center"id="biaoge">
+																				<tr>
+																					<td>品牌</td>
+																					<td>商品名称</td>
+																					<td class="chang">原价</td>
+																					<td>拼团价</td>
+																					<td>活动状态</td>
+																					<td>成团人数</td>
+																					<td>操作</td>
+
+																				</tr>
+																				<tr>
+																					<td >
+																						<select class="xiala" id="pingpai">
+																							<option value="纪梵希">纪梵希</option>
+																							<option value="海蓝之谜">海蓝之谜</option>
+																							<option value="阿玛尼">阿玛尼</option>
+																							<option value="祖马龙">祖马龙</option>
+																						</select>
+																					</td>
+																					<td> <select class="xiala1" id="xialie"> <option value="" ></option></select> </td>
+																					<td class="yuanjia" > <input type="text" value=""id="yuanjia"> </td>
+																					<td class="lie"><input type="text" name="" value="" id="pintuanjia"></td>
+																					<td> <select class="xiala" id="start">
+																						<option value="已开始">已开始</option>
+																						<option value="未开始">未开始</option>
+																					</select>
+																					</td>
+																					<td> <select class="xiala" id="rensu">
+																						<option value="1人">1人</option>
+																						<option value="2人">2人</option>
+																						<option value="3人">3人</option>
+																						<option value="4人">4人</option>
+																						<option value="5人">5人</option>
+																						<option value="6人">6人</option>
+																						<option value="7人">7人</option>
+																						<option value="8人">8人</option>
+																						<option value="9人">9人</option>
+																						<option value="10人">10人</option>
+																					</select>
+																					</td>
+																					<td><button class="anniu" id="baocun" type="button">保存</button> </td>
+
+																				</tr>
+																			</table>
+																		</div>
+																	</div>
+																</form>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+													<button type="button" class="btn btn-primary">Save changes</button>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<button class="close" data-dismiss="alert">
+
+										<i class="icon-remove"></i>
+
+									</button>
+
+								</div>
+
+								<table id="grid-table"></table>
+
+								<div id="grid-pager"></div>
+
+								<script type="text/javascript">
+
+									var $path_base = "/";//this will be used in gritter alerts containing images
+
+								</script>
+
+								<!-- PAGE CONTENT ENDS -->
+
+						</div><!-- /.col -->
+
+					</div><!-- /.row -->
+
+				</div><!-- /.page-content -->
+
+			</div><!-- /.main-content -->
+
+		</div><!-- /.main-container-inner -->
+
+	</div><!-- /.main-container -->
+	
+	<!-- basic scripts -->
+	
+	<!--[if !IE]> -->
+	
+	<!--<script src="http://www.jq22.com/jquery/jquery-2.1.1.js"></script>-->
+	<!--<script src="../../js/jquery.min.js"></script>-->
+	<!-- <![endif]-->
+	
+	<!--[if !IE]> -->
+	
+	<script type="text/javascript">
+	
+		window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+	
+	</script>
+	
+	<!-- <![endif]-->
+	
+	<script type="text/javascript">
+	
+		if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+	
+	</script>
+	<script src="../../js/jquery.min.js"></script>
+	<script src="../../js/data.js"></script>
+	<!--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>-->
+	<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+	<script src="../js/smoothscroll.js"></script>
+	
+	<!--<script src="http://www.jq22.com/jquery/bootstrap-3.3.4.js"></script>-->
+	<script src="../../js/bootstrap.js"></script>
+	<script src="assets/js/typeahead-bs2.min.js"></script>
+	
+	<!-- page specific plugin scripts -->
+	
+	<!-- <script src="assets/js/date-time/bootstrap-datepicker.min.js"></script> -->
+	
+	<script src="assets/js/jqGrid/jquery.jqGrid.min.js"></script>
+	
+	<script src="assets/js/jqGrid/i18n/grid.locale-en.js"></script>
+	
+	<!-- ace scripts -->
+	
+	<script src="assets/js/ace-elements.min.js"></script>
+	
+	<script src="assets/js/ace.min.js"></script>
+	
+	<!-- inline scripts related to this page -->
+	
+	<script type="text/javascript">
+	
+		var grid_data = 
+	
+		[
+
+
+		    {id:"1", 商品名:"纪梵希",name:"花漾曜白柔肤水",jiage:"666",note:"2人",stock:"已开始",ship:"50", sdate:"2019-10-09T00:00" ,effective:"24小时" },
+			{id:"2", 商品名:"阿玛尼",name:"阿玛尼蕴能奂颜净彻滋润洁面乳",jiage:"1080",note:"6人",stock:"已开始",ship:"100", sdate:"2019-10-09T00:00" ,effective:"12小时" },
+            {id:"3", 商品名:"阿玛尼",name:"阿玛尼「红色挚爱」香水",jiage:"960",note:"4人",stock:"已开始",ship:"300", sdate:"2019-10-09T00:00" ,effective:"36小时" },
+            {id:"4", 商品名:"海蓝之谜",name:"海蓝之谜鎏光焕变粉底液",jiage:"1500",note:"8人",stock:"已开始",ship:"200", sdate:"2019-10-09T00:00" ,effective:"24小时" },
+			{id:"5", 商品名:"祖马龙",name:"黑琥珀与姜百合菁华润肤油",jiage:"999",note:"10人",stock:"已开始",ship:"400", sdate:"2019-10-09T00:00" ,effective:"12小时" },
+			// {id:"2",name:"我现在还不知道",note:"2",stock:"已开始",ship:"50.00", sdate:"2019-10-09"},
+			// {id:"3",name:"我现在还不知道",note:"2",stock:"已开始",ship:"50.00", sdate:"2019-10-09"},
+			// {id:"4",name:"我现在还不知道",note:"2",stock:"已开始",ship:"50.00", sdate:"2019-10-09"},
+			// {id:"5",name:"我现在还不知道",note:"2",stock:"已开始",ship:"50.00", sdate:"2019-10-09"},
+			// {id:"6",name:"我现在还不知道",note:"2",stock:"已开始",ship:"50.00", sdate:"2019-10-09"},
+			// {id:"7",name:"我现在还不知道",note:"2",stock:"已开始",ship:"50.00", sdate:"2019-10-09"},
+			// {id:"7",name:"我现在还不知道",note:"2",stock:"已开始",ship:"50.00", sdate:"2019-10-09"},
+			// {id:"7",name:"我现在还不知道",note:"2",stock:"已开始",ship:"50.00", sdate:"2019-10-09"},
+			// {id:"7",name:"我现在还不知道",note:"2",stock:"已开始",ship:"50.00", sdate:"2019-10-09"},
+			// {id:"7",name:"我现在还不知道",note:"2",stock:"已开始",ship:"50.00", sdate:"2019-10-09"},
+	
+		];	
+	
+		
+	
+		jQuery(function($) {
+	
+			var grid_selector = "#grid-table";
+	
+			var pager_selector = "#grid-pager";
+	
+	
+			$(grid_selector).jqGrid({
+	
+				data: grid_data,
+	
+				datatype: "local",
+	
+				height:250,
+
+				colNames:['操作', 'id','活动开始时间','成团有效时间(小时)' ,'品牌名', '商品名称','价格(元)',  '拼团价(元)','活动状态','成团人数'],
+
+				colModel:[
+	
+					{name:'myac',index:'操作', width:80, fixed:true, sortable:false, resize:false,
+	
+						formatter:'actions', 
+	
+						formatoptions:{ 
+	
+							keys:true,
+	
+							delOptions:{recreateForm: true, beforeShowForm:beforeDeleteCallback},
+	
+						}
+	
+					},
+	
+					{name:'id',index:'id', width:60, sorttype:"int", editable: true},
+	
+					{name:'sdate',index:'活动开始时间',width:150, editable:true, sorttype:"date",unformat: pickDate},
+
+                    {name:'effective',index:'成团有效时间(小时)', width:50 },
+                   {name:'商品名',index:'商品名',width:80},
+
+
+
+                    {name:'name',index:'商品名称', width:150,editable: true,editoptions:{size:"20",maxlength:"30"}},
+                    {name:'jiage',index:'价格', width:50,},
+                    {name:'ship',index:'拼团价', width:50, sorttype:"float", editable: true},
+					{name:'stock',index:'活动状态', width:50, editable: true,edittype:"checkbox",editoptions: {value:"yes:no"},unformat: aceSwitch},
+	
+
+	
+					{name:'note',index:'成团人数', width:150, sorttype:"int", editable: true} 
+	
+				], 
+	
+				viewrecords : true,
+	
+				rowNum:10,
+	
+				rowList:[10,20,30],
+	
+				pager : pager_selector,
+	
+				altRows: true,
+
+				multiselect: true,
+
+		        multiboxonly: true,
+	
+				loadComplete : function() {
+	
+					var table = this;
+	
+					setTimeout(function(){
+	
+						styleCheckbox(table);
+		
+						updateActionIcons(table);
+	
+						updatePagerIcons(table);
+	
+						enableTooltips(table);
+	
+					}, 0);
+	
+				},
+	
+		
+				editurl: $path_base+"/dummy.html",//nothing is saved
+	
+				caption: "拼团管理列表",
+	
+	
+				autowidth: true  //自动宽度
+			});
+	
+	
+			function aceSwitch( cellvalue, options, cell ) {
+	
+				setTimeout(function(){
+	
+					$(cell) .find('input[type=checkbox]')
+	
+							.wrap('<label class="inline" />')
+	
+						.addClass('ace ace-switch ace-switch-5')
+	
+						.after('<span class="lbl"></span>');
+	
+				}, 0);
+	
+			}
+	
+			//日期选择器
+	
+			function pickDate( cellvalue, options, cell ) {
+	
+				setTimeout(function(){
+	
+					$(cell) .find('input[type=text]')
+	
+							.datepicker({format:'yyyy-mm-dd' , autoclose:true}); 
+	
+				}, 0);
+	
+			}
+	
+			//navButtons
+	
+			$(grid_selector).jqGrid('navGrid',pager_selector,
+	
+				{ 	//navbar options
+	
+					edit: true,
+	
+					editicon : 'icon-pencil blue',
+	
+					add: true,
+	
+					addicon : 'icon-plus-sign purple',
+	
+					del: true,
+	
+					delicon : 'icon-trash red',
+	
+					search: true,
+	
+					searchicon : 'icon-search orange',
+	
+					refresh: true,
+	
+					refreshicon : 'icon-refresh green',
+	
+					view: true,
+	
+					viewicon : 'icon-zoom-in grey',
+				},
+	
+				{
+	
+					//edit record form
+	
+					recreateForm: true,
+	
+					beforeShowForm : function(e) {
+	
+						var form = $(e[0]);
+	
+						form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+	
+						style_edit_form(form);
+	
+					}
+	
+				},
+	
+				{
+	
+					//new record form
+	
+					closeAfterAdd: true,
+	
+					recreateForm: true,
+	
+					viewPagerButtons: false,
+	
+					beforeShowForm : function(e) {
+	
+						var form = $(e[0]);
+	
+						form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+	
+						style_edit_form(form);
+	
+					}
+	
+				},
+	
+				{
+	
+					//delete record form
+	
+					recreateForm: true,
+	
+					beforeShowForm : function(e) {
+	
+						var form = $(e[0]);
+	
+						if(form.data('styled')) return false;
+	
+						form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+	
+						style_delete_form(form);
+	
+						form.data('styled', true);
+	
+					},
+	
+				},
+	
+				{
+	
+					//search form
+	
+					recreateForm: true,
+	
+					afterShowSearch: function(e){
+	
+						var form = $(e[0]);
+	
+						form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+	
+						style_search_form(form);
+	
+					},
+	
+					afterRedraw: function(){
+	
+						style_search_filters($(this));
+	
+					}
+	
+					,
+	
+					multipleSearch: true,
+	
+				},
+	
+				{
+	
+					//view record form
+	
+					recreateForm: true,
+	
+					beforeShowForm: function(e){
+	
+						var form = $(e[0]);
+	
+						form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+	
+					}
+	
+				}
+	
+			)
+	
+			function style_edit_form(form) {
+	
+				//enable datepicker on "sdate" field and switches for "stock" field
+	
+				form.find('input[name=sdate]').datepicker({format:'yyyy-mm-dd' , autoclose:true})
+	
+					.end().find('input[name=stock]')
+	
+						  .addClass('ace ace-switch ace-switch-5').wrap('<label class="inline" />').after('<span class="lbl"></span>');
+	
+				//update buttons classes
+	
+				var buttons = form.next().find('.EditButton .fm-button');
+	
+				buttons.addClass('btn btn-sm').find('[class*="-icon"]').remove();//ui-icon, s-icon
+	
+				buttons.eq(0).addClass('btn-primary').prepend('<i class="icon-ok"></i>');
+	
+				buttons.eq(1).prepend('<i class="icon-remove"></i>')
+	
+				
+	
+				buttons = form.next().find('.navButton a');
+	
+				buttons.find('.ui-icon').remove();
+	
+				buttons.eq(0).append('<i class="icon-chevron-left"></i>');
+	
+				buttons.eq(1).append('<i class="icon-chevron-right"></i>');		
+	
+			}
+	
+	
+			function style_delete_form(form) {
+	
+				var buttons = form.next().find('.EditButton .fm-button');
+	
+				buttons.addClass('btn btn-sm').find('[class*="-icon"]').remove();//ui-icon, s-icon
+	
+				buttons.eq(0).addClass('btn-danger').prepend('<i class="icon-trash"></i>');
+	
+				buttons.eq(1).prepend('<i class="icon-remove"></i>')
+	
+			}
+	
+			
+	
+			function style_search_filters(form) {
+	
+				form.find('.delete-rule').val('X');
+	
+				form.find('.add-rule').addClass('btn btn-xs btn-primary');
+	
+				form.find('.add-group').addClass('btn btn-xs btn-success');
+	
+				form.find('.delete-group').addClass('btn btn-xs btn-danger');
+	
+			}
+	
+			function style_search_form(form) {
+	
+				var dialog = form.closest('.ui-jqdialog');
+	
+				var buttons = dialog.find('.EditTable')
+	
+				buttons.find('.EditButton a[id*="_reset"]').addClass('btn btn-sm btn-info').find('.ui-icon').attr('class', 'icon-retweet');
+	
+				buttons.find('.EditButton a[id*="_query"]').addClass('btn btn-sm btn-inverse').find('.ui-icon').attr('class', 'icon-comment-alt');
+	
+				buttons.find('.EditButton a[id*="_search"]').addClass('btn btn-sm btn-purple').find('.ui-icon').attr('class', 'icon-search');
+	
+			}
+	
+			
+	
+			function beforeDeleteCallback(e) {
+	
+				var form = $(e[0]);
+	
+				if(form.data('styled')) return false;
+	
+				form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+	
+				style_delete_form(form);
+	
+				form.data('styled', true);
+	
+			}
+	
+	
+			function beforeEditCallback(e) {
+	
+				var form = $(e[0]);
+	
+				form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+	
+				style_edit_form(form);
+	
+			}
+	
+	
+			function styleCheckbox(table) {
+	
+	
+			}
+	
+			function updateActionIcons(table) {
+	
+				/**
+	
+				var replacement = 
+	
+				{
+	
+					'ui-icon-pencil' : 'icon-pencil blue',
+	
+					'ui-icon-trash' : 'icon-trash red',
+	
+					'ui-icon-disk' : 'icon-ok green',
+	
+					'ui-icon-cancel' : 'icon-remove red'
+	
+				};
+	
+				$(table).find('.ui-pg-div span.ui-icon').each(function(){
+	
+					var icon = $(this);
+	
+					var $class = $.trim(icon.attr('class').replace('ui-icon', ''));
+	
+					if($class in replacement) icon.attr('class', 'ui-icon '+replacement[$class]);
+	
+				})
+	
+				*/
+	
+			}
+	
+			
+	
+			//上一页下一页
+	
+			function updatePagerIcons(table) {  
+	
+				var replacement = 
+	
+				{
+	
+					'ui-icon-seek-first' : 'icon-double-angle-left bigger-140',
+	
+					'ui-icon-seek-prev' : 'icon-angle-left bigger-140',
+	
+					'ui-icon-seek-next' : 'icon-angle-right bigger-140',
+	
+					'ui-icon-seek-end' : 'icon-double-angle-right bigger-140'
+	
+				};
+	
+				$('.ui-pg-table:not(.navtable) > tbody > tr > .ui-pg-button > .ui-icon').each(function(){
+	
+					var icon = $(this);
+	
+					var $class = $.trim(icon.attr('class').replace('ui-icon', ''));
+	
+					
+	
+					if($class in replacement) icon.attr('class', 'ui-icon '+replacement[$class]);
+	
+				})
+	
+			}
+	
+			function enableTooltips(table) {
+	
+				$('.navtable .ui-pg-button').tooltip({container:'body'});
+	
+				$(table).find('.ui-pg-div').tooltip({container:'body'});
+	
+			}
+	
+		});
+	
+	</script>
+	
+	<script>
+
+
+        $("#baocun").click(function () {
+            $("#shijian").val();
+            console.log($("#shijian").val());
+            $("#shijian1").val();
+            console.log($("#shijian1").val());
+            $("#shijian2").val();
+            console.log($("#shijian2").val());
+            $("#pingpai").val();
+            console.log($("#pingpai").val());
+
+
+            $("#xialie").text();
+            console.log($("#xialie option:selected").text());
+
+
+            $("#yuanjia").val();
+            console.log(  $("#yuanjia").val());
+            $("#pintuanjia").val();
+            console.log($("#pintuanjia").val());
+            $("#start").val();
+            console.log($("#start").val());
+            $("#rensu").val();
+            console.log( $("#rensu").val());
+
+
+
+
+            function a() {
+                // 找到节点
+                $(".jqgfirstrow").next();
+                // console.log(  $(".jqgfirstrow").next());
+                //复制节点
+                var fuzhi=$(".jqgfirstrow").next().clone(true)[0];
+
+                console.log( $(".jqgfirstrow").next().clone(true))
+
+               // 更换节点里面的内容
+                fuzhi.getElementsByTagName("td")[5].innerText= $("#pingpai").val();
+				fuzhi.getElementsByTagName("td")[3].innerText= $("#shijian").val();
+                fuzhi.getElementsByTagName("td")[2].innerText= $("#shijian1").val();
+                fuzhi.getElementsByTagName("td")[4].innerText= $("#shijian2").val();
+                fuzhi.getElementsByTagName("td")[6].innerText= $("#xialie option:selected").text();
+                fuzhi.getElementsByTagName("td")[7].innerText= $("#yuanjia").val();
+                fuzhi.getElementsByTagName("td")[8].innerText= $("#pintuanjia").val();
+                fuzhi.getElementsByTagName("td")[9].innerText= $("#start").val();
+                fuzhi.getElementsByTagName("td")[10].innerText= $("#rensu").val();
+
+
+
+
+               // 复制的东西加入里面
+                $("#grid-table>tbody").append(fuzhi);
+                // console.log($("#grid-table>tbody").append(fuzhi));
+
+            }
+
+            a();
+        })
+
+        $("#pingpai").blur(function () {
+            $("#xialie").find("option").remove();
+            $("#pingpai").val();
+            $.each(goods_data,function (i,n) {
+                // console.log(i);
+                // console.log(n);
+                if( goods_data[i].goodsBrand.indexOf( $("#pingpai").val())!=-1){
+                    // console.log( goods_data[i].goodsBrand);
+                    var xialie=$("#xialie")
+                    xialie.append("<option value="+goods_data[i].goodsOriginalCost+">"+goods_data[i].goodsName+"</option>");
+                }
+            })
+        })
+        $("#xialie").blur(function () {
+            $("#xialie").val();
+            console.log($("#xialie").val());
+            $("#xialie").change(function(){
+                $("#yuanjia").val($(this).val());
+            })
+        })
+	</script>
+
+
+
+
+</body>
+</html>

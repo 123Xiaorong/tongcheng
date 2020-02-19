@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>个人中心</title>
+    <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/heightlength.css">
+    <link rel="stylesheet" href="../css/mxjs.css">
+    <link rel="stylesheet" href="css/myCity.css">
+    <link rel="stylesheet" href="css/myCenter.css">
+</head>
+<body>
+<div class="container" style="color: white">
+    <h3>个人中心</h3>
+    <div id="myCenter">
+        <table>
+            <tr>
+                <td>ID：</td>
+                <td id="myId"></td>
+            </tr>
+            <tr>
+                <td>用户名：</td>
+                <td id="myName"></td>
+            </tr>
+            <tr>
+                <td>性别：</td>
+                <td id="mySex"></td>
+            </tr>
+            <tr>
+                <td>手机号码：</td>
+                <td id="myPhone"></td>
+            </tr>
+            <tr>
+                <td>身份账号：</td>
+                <td id="myNum"></td>
+            </tr>
+            <tr>
+                <td>邮箱：</td>
+                <td id="myEmail"></td>
+            </tr>
+            <tr>
+                <td>权限：</td>
+                <td id="myPower"></td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                <td id="myPasswordI"></td>
+            </tr>
+            <tr>
+                <td>住址：</td>
+                <td id="myAddress"></td>
+            </tr>
+            <tr>
+                <td colspan="2" id="myBtn">
+                    <input type="button" value="修改密码" id="myBtnOne">
+                    <input type="button" value="修改个人信息" id="myBtnTwo">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="myInfo">
+        <table>
+            <tr>
+                <td>用户名：</td>
+                <td>
+                    <input type="text"  id="myInfoName">
+                </td>
+            </tr>
+            <tr>
+                <td>手机号码：</td>
+                <td>
+                    <input type="text" id="myInfoPhone">
+                </td>
+            </tr>
+            <tr>
+                <td>邮箱：</td>
+                <td>
+                    <input type="text" id="myInfoEmail">
+                </td>
+            </tr>
+            <tr>
+                <td>住址：</td>
+                <!--<td>-->
+                    <!--<input type="text" id="myInfoAddress">-->
+                <!--</td>-->
+                <td style="padding-top: 20px;padding-bottom: 20px">
+                    <div id="super_citys">
+                        <div class="provinces">
+                            <input class="input1" type="hidden" value="0" name="">
+                            <input class="input2" type="hidden" value="0" name="">
+                            <div id="provinces">请选择省份</div>
+                            <ul class="shadow_ul">
+                                <li><input type="hidden" value="0"><span>请选择省份</span></li>
+                            </ul>
+                        </div>
+                        <div class="city">
+                            <input class="input1" type="hidden" value="0" name="">
+                            <input class="input2" type="hidden" value="0" name="">
+                            <div id="city">请选择城市</div>
+                            <ul>
+                                <li><input type="hidden" value="0"><span>请选择城市</span></li>
+                            </ul>
+                        </div>
+                        <div class="area">
+                            <input class="input1" type="hidden" value="0" name="">
+                            <input class="input2" type="hidden" value="0" name="">
+                            <div id="area">请选择地区</div>
+                            <ul>
+                                <li><input type="hidden" value="0"><span>请选择地区</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" id="myInfoBtn">
+                    <input type="button" value="保存" id="saveBtn">
+                    <input type="button" value="取消" id="cancelBtn">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="myPassword">
+        <table>
+            <tr>
+                <td>
+                    <label for="secret">原密码：</label>
+                </td>
+                <td>
+                    <input type="password" id="secretOld" data-type="password" style="margin-bottom: 15px">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="secret">新密码：</label>
+                </td>
+                <td>
+                    <input type="password" id="secret" data-type="password" onkeyup="pwStrength(this.value)">
+                </td>
+            </tr>
+            <tr style="height: 50px">
+                <td colspan="2">
+                    <ul class="pass_set">
+                        <li id="strength_L">弱</li>
+                        <li id="strength_M">中</li>
+                        <li id="strength_H">强</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="secret">再次输入：</label>
+                </td>
+                <td>
+                    <input type="password" id="secretAgain">
+                </td>
+            </tr>
+            <tr>
+               <td colspan="2">
+                   <input type="button" id="mySumbit" value="提交">
+                   <input type="button" id="cancel" value="取消">
+               </td>
+            </tr>
+        </table>
+        <h4 style="color: red">* 请输入数字或者大小写英文字母，长度5-10，不能全由数字或者字母组成</h4>
+    </div>
+</div>
+
+<script src="../../js/jquery.min.js"></script>
+<!--<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>-->
+<script src="../../js/bootstrap.js"></script>
+<script src="../js/smoothscroll.js"></script>
+<!--<script src="../../js/data.js"></script>-->
+<!--<script src="../../login/js/login.js"></script>-->
+<script src="../../js/md5.pro.js"></script>
+<script src="js/city.js"></script>
+<script src="js/myCity.js"></script>
+<script src="js/myCenter.js"></script>
+<!--<script>-->
+    <!--var a = JSON.parse(localStorage.getItem('newAdmin'));-->
+    <!--console.log(a);-->
+<!--</script>-->
+
+
+</body>
+</html>
